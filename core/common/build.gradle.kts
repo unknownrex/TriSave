@@ -1,7 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.devtoolsKSP)
+    alias(libs.plugins.jetbrainsKotlinParcelize)
+    alias(libs.plugins.kotlin.serialization)
 }
+
+apply(from = "../../shared-dependencies.gradle")
 
 android {
     namespace = "com.rexample.common"

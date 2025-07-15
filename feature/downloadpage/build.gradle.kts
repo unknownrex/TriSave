@@ -3,13 +3,14 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.devtoolsKSP)
     alias(libs.plugins.jetbrainsKotlinParcelize)
+    alias(libs.plugins.compose.compiler)
     alias(libs.plugins.kotlin.serialization)
 }
 
 apply(from = "../../shared-dependencies.gradle")
 
 android {
-    namespace = "com.rexample.data"
+    namespace = "com.rexample.feature.downloadpage"
     compileSdk = 34
 
     defaultConfig {
@@ -38,13 +39,9 @@ android {
 }
 
 dependencies {
-    api(libs.ktor.client.core)
-    api(libs.ktor.client.okhttp)
-    api(libs.ktor.kotlinSerialization)
-    api(libs.ktor.contentNegotiation)
-    implementation(libs.ktor.cio)
-    api(libs.datastore.preferences)
-    implementation(libs.kotlinx.serialization.json)
+    implementation(project(":core:common"))
+    implementation(project(":core:ui"))
+    implementation(project(":core:data"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

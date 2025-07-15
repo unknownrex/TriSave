@@ -1,0 +1,8 @@
+dependencies {
+    // Koin
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+
+    // Serialization
+    implementation(libs.kotlinx.serialization.json)
+}
